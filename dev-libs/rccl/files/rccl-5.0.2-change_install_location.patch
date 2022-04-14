@@ -1,0 +1,19 @@
+Only in rccl-rocm-5.0.2.orig/: .CMakeLists.txt.swp
+diff -ru rccl-rocm-5.0.2.orig/CMakeLists.txt rccl-rocm-5.0.2/CMakeLists.txt
+--- rccl-rocm-5.0.2.orig/CMakeLists.txt	2022-04-14 21:48:00.445013762 +0200
++++ rccl-rocm-5.0.2/CMakeLists.txt	2022-04-14 21:48:54.632828675 +0200
+@@ -267,12 +267,9 @@
+ #Setup librccl.so version
+ rocm_set_soversion(rccl "1.0")
+ 
+-rocm_install_targets(TARGETS
+-                     rccl
+-                     PREFIX
+-                     rccl)
++rocm_install_targets(TARGETS rccl)
+ rocm_install(FILES ${PROJECT_BINARY_DIR}/rccl.h
+-        DESTINATION rccl/${CMAKE_INSTALL_INCLUDEDIR})
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
+ rocm_export_targets(NAMESPACE
+                     roc::

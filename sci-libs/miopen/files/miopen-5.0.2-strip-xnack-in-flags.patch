@@ -1,0 +1,15 @@
+Only in MIOpen-rocm-5.0.2: .CMakeLists.txt.swp
+diff -ru MIOpen-rocm-5.0.2.orig/CMakeLists.txt MIOpen-rocm-5.0.2/CMakeLists.txt
+--- MIOpen-rocm-5.0.2.orig/CMakeLists.txt	2022-04-14 20:47:32.242412952 +0200
++++ MIOpen-rocm-5.0.2/CMakeLists.txt	2022-04-14 20:48:29.251652133 +0200
+@@ -198,8 +198,8 @@
+ message(STATUS "Build with HIP ${hip_VERSION}")
+ target_flags(HIP_COMPILER_FLAGS hip::device)
+ # Remove cuda arch flags
+-string(REGEX REPLACE --cuda-gpu-arch=[a-z0-9]+ "" HIP_COMPILER_FLAGS "${HIP_COMPILER_FLAGS}")
+-string(REGEX REPLACE --offload-arch=[a-z0-9]+ "" HIP_COMPILER_FLAGS "${HIP_COMPILER_FLAGS}")
++string(REGEX REPLACE --cuda-gpu-arch=[a-z0-9:+-]+ "" HIP_COMPILER_FLAGS "${HIP_COMPILER_FLAGS}")
++string(REGEX REPLACE --offload-arch=[a-z0-9:+-]+ "" HIP_COMPILER_FLAGS "${HIP_COMPILER_FLAGS}")
+ string(REPLACE "$<LINK_LANGUAGE:CXX>" "1" HIP_COMPILER_FLAGS "${HIP_COMPILER_FLAGS}")
+ string(REPLACE "SHELL:" "" HIP_COMPILER_FLAGS "${HIP_COMPILER_FLAGS}")
+ 

@@ -1,0 +1,12 @@
+diff -ru rocSOLVER-rocm-4.3.0.orig/library/include/rocsolver-extra-types.h rocSOLVER-rocm-4.3.0/library/include/rocsolver-extra-types.h
+--- rocSOLVER-rocm-4.3.0.orig/library/include/rocsolver-extra-types.h	2022-01-07 14:27:47.639095674 +0100
++++ rocSOLVER-rocm-4.3.0/library/include/rocsolver-extra-types.h	2022-01-07 14:27:17.595369506 +0100
+@@ -5,6 +5,8 @@
+ #ifndef ROCSOLVER_EXTRAS_H_
+ #define ROCSOLVER_EXTRAS_H_
+ 
++#include <stdint.h>
++
+ /*! \brief Used to specify the logging layer mode using a bitwise combination
+  *of rocblas_layer_mode values.
+  ********************************************************************************/
